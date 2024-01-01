@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nvidia-query
+spec:
+  restartPolicy: OnFailure
+  nodeSelector:
+    node-type: jetson
+  containers:
+  - name: nvidia-query
+    image: xift/jetson_devicequery:r32.5.0
+    command: [ "./deviceQuery" ]

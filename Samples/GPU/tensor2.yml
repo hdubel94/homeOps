@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+name: nvidia-query
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: nvidia-query
+    image: xift/jetson_devicequery:r32.5.0
+    command: [ "./deviceQuery" ]
+    resources:
+      limits:
+        nvidia.com/gpu: 1 # requesting 1 GPU
+  tolerations:
+  - key: nvidia.com/gpu
+    operator: Exists
+    effect: NoSchedule
