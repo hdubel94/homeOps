@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: homarr-configs-pv
+  namespace: homarr
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.1.155
+    path: /nfs/k3s/homarr/configs
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: homarr-icons-pv
+  namespace: homarr
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.1.155
+    path: /nfs/k3s/homarr/icons
+
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: homarr-data-pv
+  namespace: homarr
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.1.155
+    path: /nfs/k3s/homarr/data
