@@ -10,4 +10,19 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 9090
-  type: LoadBalancer # or LoadBalancer if your environment supports it
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-service
+  namespace: prometheus
+spec:
+  type: ClusterIP
+  selector:
+    app: prometheus
+  ports:
+    - protocol: TCP
+      port: 9090
+      targetPort: 9090
+
