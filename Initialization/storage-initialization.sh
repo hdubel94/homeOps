@@ -5,7 +5,7 @@ helm repo add nfs-subdir-external-provisioner <https://kubernetes-sigs.github.io
 
 # Install  
 helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \  
---set nfs.server=192.158.1.155 \  
+--set nfs.server=192.168.1.155 \  
 --set nfs.path=/nfs/k3s \  
 --create-namespace \  
 --namespace nfs-system
