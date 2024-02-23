@@ -18,6 +18,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: homarr-configs-pvc
   namespace: homarr
+spec:
   accessModes:
     - ReadWriteOnce
   resources:
