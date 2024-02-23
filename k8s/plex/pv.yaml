@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: plex-media
+  namespace: plex
+spec:
+  capacity:
+    storage: 1000Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /nfs/Plex
+    server: 192.168.1.155
+  storageClassName: nfs-plex
+  persistentVolumeReclaimPolicy: Retain
